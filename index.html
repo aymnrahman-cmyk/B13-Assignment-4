@@ -58,12 +58,12 @@
         <p class="font-bold">Available Jobs</p>
         <p><span>8</span> jobs</p>
     </div>
-    <div class="mt-6 mb-4 space-x-2">
-        <button class="btn btn-soft btn-primary">All</button>
-        <button class="btn btn-soft btn-primary">Interview</button>
-        <button class="btn btn-soft btn-primary">Rejected</button>
+    <div class="toggles mt-6 mb-4 space-x-2">
+        <button id="show-all" class="btn btn-soft btn-primary">All</button>
+        <button id="show-interview" class="btn btn-soft btn-primary">Interview</button>
+        <button id="show-rejected" class="btn btn-soft btn-primary">Rejected</button>
     </div>
-    <div class="jobs grid grid-cols-1 space-y-3 pb-6">
+    <div id="all-jobs" class="jobs grid grid-cols-1 space-y-3 pb-6">
         <div class="job card card-border p-6 space-y-3">
             <div>
                 <div class="flex justify-between">
@@ -226,12 +226,17 @@
             </div>
         </div>
     </div>
-    <div class="mb-15 justify-center items-center card card-border">
+    <div id="interview-jobs" class="jobs grid grid-cols-1 space-y-3 pb-6 hidden">
+    </div>
+    <div id="rejected-jobs" class="jobs grid grid-cols-1 space-y-3 pb-6 hidden">
+    </div>
+    <div id="no-jobs" class="mb-15 justify-center items-center card card-border hidden">
         <div class="pt-[111px] px-[505px] mb-5">
-            <i class="fa-solid fa-file text-8xl"></i>
+            <img src="./jobs.png" alt="">
         </div>
         <p class="font-bold text-md">No jobs available</p>
         <p class="opacity-50 pb-[111px]">Check back soon for new job opportunities</p>
     </div>
+    <script src="script/all.js"></script>
   </body>
 </html>
