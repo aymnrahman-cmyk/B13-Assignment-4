@@ -56,7 +56,7 @@
     <hr class="my-[30px]">
     <div class="flex justify-between">
         <p class="font-bold">Available Jobs</p>
-        <p><span>8</span> jobs</p>
+        <p><span id="job-count">8</span> jobs</p>
     </div>
     <div class="toggles mt-6 mb-4 space-x-2">
         <button id="show-all" class="btn btn-soft btn-primary">All</button>
@@ -227,15 +227,22 @@
         </div>
     </div>
     <div id="interview-jobs" class="jobs grid grid-cols-1 space-y-3 pb-6 hidden">
+        <div id="no-jobs-interview" class="mb-15 justify-center items-center card card-border ">
+            <div class="pt-[111px] px-[505px] mb-5">
+                <img src="./jobs.png" alt="">
+            </div>
+            <p class="font-bold text-md">No jobs available</p>
+            <p class="opacity-50 pb-[111px]">Check back soon for new job opportunities</p>
+        </div>
     </div>
     <div id="rejected-jobs" class="jobs grid grid-cols-1 space-y-3 pb-6 hidden">
-    </div>
-    <div id="no-jobs" class="mb-15 justify-center items-center card card-border hidden">
-        <div class="pt-[111px] px-[505px] mb-5">
-            <img src="./jobs.png" alt="">
+        <div id="no-jobs-rejected" class="mb-15 justify-center items-center card card-border ">
+            <div class="pt-[111px] px-[505px] mb-5">
+                <img src="./jobs.png" alt="">
+            </div>
+            <p class="font-bold text-md">No jobs available</p>
+            <p class="opacity-50 pb-[111px]">Check back soon for new job opportunities</p>
         </div>
-        <p class="font-bold text-md">No jobs available</p>
-        <p class="opacity-50 pb-[111px]">Check back soon for new job opportunities</p>
     </div>
     <script src="script/all.js"></script>
   </body>

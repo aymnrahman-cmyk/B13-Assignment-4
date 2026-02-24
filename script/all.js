@@ -11,7 +11,13 @@ for (let i = 0; i < interviewButtons.length; i++) {
     const statusButton = jobCard.getElementsByClassName("btn-soft")[0];
     statusButton.innerText = "Interview";
     statusButton.classList.add("btn-success");
-});
+    const noJobs = document.getElementById("no-jobs-interview");
+    if (interviewContainer.getElementsByClassName("job").length === 0) {
+      noJobs.classList.remove("hidden"); 
+    } else {
+      noJobs.classList.add("hidden"); 
+    }
+  });
 }
 
 for (let i = 0; i < rejectedButtons.length; i++) {
@@ -21,29 +27,39 @@ for (let i = 0; i < rejectedButtons.length; i++) {
     const statusButton = jobCard.getElementsByClassName("btn-soft")[0];
     statusButton.innerText = "Rejected";
     statusButton.classList.add("btn-error");
+    const noJobs = document.getElementById("no-jobs-rejected");
+    if (rejectedContainer.getElementsByClassName("job").length === 0) {
+      noJobs.classList.remove("hidden"); 
+    } else {
+      noJobs.classList.add("hidden"); 
+    }
   });
 }
 
 const allJobs = document.getElementById("all-jobs");
 const interviewJobs = document.getElementById("interview-jobs");
 const rejectedJobs = document.getElementById("rejected-jobs");
+const jobCount = document.getElementById("job-count");
 
 document.getElementById("show-all").addEventListener("click", function() {
-allJobs.classList.remove("hidden");
-interviewJobs.classList.add("hidden");
-  rejectedJobs.classList.add("hidden");
+    allJobs.classList.remove("hidden");
+    interviewJobs.classList.add("hidden");
+    rejectedJobs.classList.add("hidden");
+    jobCount.innerText = document.getElementById("all-jobs").getElementsByClassName("job").length;
 });
 
 document.getElementById("show-interview").addEventListener("click", function() {
   allJobs.classList.add("hidden");
   interviewJobs.classList.remove("hidden");
   rejectedJobs.classList.add("hidden");
+  jobCount.innerText = interviewContainer.getElementsByClassName("job").length;
 });
 
 document.getElementById("show-rejected").addEventListener("click", function() {
   allJobs.classList.add("hidden");
   interviewJobs.classList.add("hidden");
   rejectedJobs.classList.remove("hidden");
+  jobCount.innerText = rejectedContainer.getElementsByClassName("job").length;
 });
 
 
