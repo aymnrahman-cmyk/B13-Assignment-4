@@ -40,26 +40,38 @@ const allJobs = document.getElementById("all-jobs");
 const interviewJobs = document.getElementById("interview-jobs");
 const rejectedJobs = document.getElementById("rejected-jobs");
 const jobCount = document.getElementById("job-count");
+const totalJobCount = document.getElementById("total-jobcount");
+const interviewJobCount = document.getElementById("interview-jobcount");
+const rejectedJobCount = document.getElementById("rejected-jobcount");
 
 document.getElementById("show-all").addEventListener("click", function() {
     allJobs.classList.remove("hidden");
     interviewJobs.classList.add("hidden");
     rejectedJobs.classList.add("hidden");
     jobCount.innerText = document.getElementById("all-jobs").getElementsByClassName("job").length;
+    totalJobCount.innerText = document.getElementById("all-jobs").getElementsByClassName("job").length;
+    interviewJobCount.innerText = document.getElementById("interview-jobs").getElementsByClassName("job").length;
+    rejectedJobCount.innerText = document.getElementById("rejected-jobs").getElementsByClassName("job").length;
 });
 
 document.getElementById("show-interview").addEventListener("click", function() {
-  allJobs.classList.add("hidden");
-  interviewJobs.classList.remove("hidden");
-  rejectedJobs.classList.add("hidden");
-  jobCount.innerText = interviewContainer.getElementsByClassName("job").length;
+    allJobs.classList.add("hidden");
+    interviewJobs.classList.remove("hidden");
+    rejectedJobs.classList.add("hidden");
+    jobCount.innerText = interviewContainer.getElementsByClassName("job").length;
+    totalJobCount.innerText = document.getElementById("all-jobs").getElementsByClassName("job").length;
+    interviewJobCount.innerText = document.getElementById("interview-jobs").getElementsByClassName("job").length;
+    rejectedJobCount.innerText = document.getElementById("rejected-jobs").getElementsByClassName("job").length;
 });
 
 document.getElementById("show-rejected").addEventListener("click", function() {
-  allJobs.classList.add("hidden");
-  interviewJobs.classList.add("hidden");
-  rejectedJobs.classList.remove("hidden");
-  jobCount.innerText = rejectedContainer.getElementsByClassName("job").length;
+    allJobs.classList.add("hidden");
+    interviewJobs.classList.add("hidden");
+    rejectedJobs.classList.remove("hidden");
+    jobCount.innerText = rejectedContainer.getElementsByClassName("job").length;
+    totalJobCount.innerText = document.getElementById("all-jobs").getElementsByClassName("job").length;
+    interviewJobCount.innerText = document.getElementById("interview-jobs").getElementsByClassName("job").length;
+    rejectedJobCount.innerText = document.getElementById("rejected-jobs").getElementsByClassName("job").length;
 });
 
 
