@@ -74,5 +74,14 @@ document.getElementById("show-rejected").addEventListener("click", function() {
     rejectedJobCount.innerText = document.getElementById("rejected-jobs").getElementsByClassName("job").length;
 });
 
+function handleDelete(e) {
+    if (e.target.classList.contains("fa-trash")) {
+        const jobCard = e.target.closest(".job");
+        jobCard.remove();
+    }
+}
 
+document.getElementById("all-jobs").addEventListener("click", handleDelete);
+document.getElementById("interview-jobs").addEventListener("click", handleDelete);
+document.getElementById("rejected-jobs").addEventListener("click", handleDelete);
 
